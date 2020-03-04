@@ -5,6 +5,7 @@ import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
 import org.opencv.objdetect.CascadeClassifier;
 
+
 class DetectFaceDemo {
 
     static{ System.loadLibrary(Core.NATIVE_LIBRARY_NAME); }
@@ -12,10 +13,15 @@ class DetectFaceDemo {
     public void run() {
         System.out.println("\nRunning DetectFaceDemo");
 
+        //Load Image
+        String file = "C:/Users/swold/IdeaProjects/ArenaCamera/src/computerVision/resources/lena.png";
+        Mat image = Imgcodecs.imread(file);
+
         // Create a face detector from the cascade file in the resources
         // directory.
-        CascadeClassifier faceDetector = new CascadeClassifier(getClass().getResource("resources/lbpcascade_frontalface.xml").getPath());
-        Mat image = Imgcodecs.imread(getClass().getResource("resources/lena.png").getPath());
+        String xmlFile = "C:/Users/swold/IdeaProjects/ArenaCamera/src/computerVision/resources/lbpcascade_frontalface.xml";
+        CascadeClassifier faceDetector = new CascadeClassifier(xmlFile);
+
 
 
         // Detect faces in the image.
@@ -33,8 +39,10 @@ class DetectFaceDemo {
 
         // Save the visualized detection.
         String filename = "faceDetection.png";
+        String path = "C:/Users/swold/IdeaProjects/ArenaCamera/src/output/";
         System.out.println(String.format("Writing %s", filename));
-        Imgcodecs.imwrite(filename, image);
+        String pathAndName = path + filename;
+        Imgcodecs.imwrite(pathAndName, image);
     }
 }
 
