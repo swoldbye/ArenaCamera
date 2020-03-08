@@ -14,12 +14,12 @@ class DetectFaceDemo {
         System.out.println("\nRunning DetectFaceDemo");
 
         //Load Image
-        String file = "C:/Users/swold/IdeaProjects/ArenaCamera/src/computerVision/resources/lena.png";
+        String file = "C:/Users/markm/IdeaProjects/ArenaCamera/src/computerVision/resources/Biggie_Smalls1.jpg";
         Mat image = Imgcodecs.imread(file);
 
         // Create a face detector from the cascade file in the resources
         // directory.
-        String xmlFile = "C:/Users/swold/IdeaProjects/ArenaCamera/src/computerVision/resources/lbpcascade_frontalface.xml";
+        String xmlFile = "C:/Users/markm/IdeaProjects/ArenaCamera/src/computerVision/resources/lbpcascade_frontalface.xml";
         CascadeClassifier faceDetector = new CascadeClassifier(xmlFile);
 
 
@@ -39,7 +39,7 @@ class DetectFaceDemo {
 
         // Save the visualized detection.
         String filename = "faceDetection.png";
-        String path = "C:/Users/swold/IdeaProjects/ArenaCamera/src/output/";
+        String path = "C:/Users/markm/IdeaProjects/ArenaCamera/src/output/";
         System.out.println(String.format("Writing %s", filename));
         String pathAndName = path + filename;
         Imgcodecs.imwrite(pathAndName, image);
