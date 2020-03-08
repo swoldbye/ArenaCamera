@@ -56,6 +56,8 @@ public class Test {
 
         // Load the native library.
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-        new DetectFaceDemo().run();
+        // new DetectFaceDemo().run();
+        ShapeDetection init = new ShapeDetection();
+        init.initializeVision();
     }
 }
