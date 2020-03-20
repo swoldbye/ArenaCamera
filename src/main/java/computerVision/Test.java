@@ -59,7 +59,7 @@ public class Test {
         // Load the native library.
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
         // new DetectFaceDemo().run();
-        CalculateBallDistance webcam = new CalculateBallDistance();
-        webcam.start();
+        ShapeDetection run = new ShapeDetection();
+        run.initializeVision();
     }
 }
